@@ -8,8 +8,8 @@ A DC motor drive system built around the DRV8833 dual H-bridge driver, with a cu
 |---|---|
 | Supply Voltage | 12 V |
 | PWM Switching Frequency | 10 kHz |
-| Speed Setpoint (simulated) | 1500 RPM |
-| Current Limit (inner loop saturation) | 0 – 10 A |
+| Speed Setpoint (simulated) | 1600 RPM |
+| Current Limit (inner loop saturation) | 0 – 1.6 A |
 | Control Architecture | Cascade: outer speed loop → inner current loop |
 
 ## Control Architecture
@@ -17,7 +17,7 @@ A DC motor drive system built around the DRV8833 dual H-bridge driver, with a cu
 The system uses a **cascade (dual-loop) control structure**, which regulates motor speed while keeping motor current within a safe limit:
 
 1. **Outer speed loop** — PI controller (P = 0.002, I = 0.02) compares the RPM setpoint against measured speed and outputs a current command.
-2. **Saturation stage** — the current command is clamped to 0–10 A, acting as a current limiter between the two loops.
+2. **Saturation stage** — the current command is clamped to 0–1.6 A, acting as a current limiter between the two loops.
 3. **Inner current loop** — PI controller (P = 0.5, I = 5) compares the (limited) current command against sensed motor current and drives the H-Bridge PWM input.
 4. **Plant** — an averaged H-Bridge model (12V, 10kHz) driving a Simscape DC Motor model (Ra = 2Ω, La = 1mH, Kv = 0.0072 V/rpm, J = 1e-5 kg·m²), with feedback from a Current Sensor (inner loop) and an Ideal Rotational Motion Sensor (outer loop, converted from rad/s to RPM).
 
@@ -31,7 +31,7 @@ This cascade structure is a standard technique for motor drives: the fast inner 
 ## How to Run the Simulation
 
 1. Open MATLAB and load `Motor_speed_control.slx` in Simulink.
-2. Run the simulation to observe the motor speed settling toward the 1500 RPM setpoint and the current staying within the 0–10 A limit.
+2. Run the simulation to observe the motor speed settling toward the 1600 RPM setpoint and the current staying within the 0–1.6 A limit.
 3. View the Scope block for speed and current response over time.
 
 
