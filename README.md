@@ -25,7 +25,7 @@ The system uses a **cascade (dual-loop) control structure**, which regulates mot
 ## Repository Structure
 
 - `Motor driver DRV8833.kicad_pro` (+ associated schematic/PCB files) — KiCad project for the DRV8833 driver board, including power rail decoupling and charge pump circuitry.
-- `Motor_speed_control.slx` — Simulink/Simscape model implementing the cascade speed/current control loop described above.
+- `Motor_speed_control.slx` — Simulink/Simscape model implementing the cascade control loop described above.
 
 ## How to Run the Simulation
 
