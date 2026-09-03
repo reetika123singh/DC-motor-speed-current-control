@@ -1,4 +1,4 @@
-# DRV8833 Dual H-Bridge Motor Driver — PCB & Cascade Speed & Current Control
+# DRV8833 Dual H-Bridge Motor Driver — PCB and Cascade Speed & Current Control
 
 A DC motor drive system built around the DRV8833 dual H-bridge driver, with a custom KiCad PCB and a Simulink/Simscape simulation of a cascade control architecture for precise speed regulation.
 
