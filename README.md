@@ -46,9 +46,9 @@ The system uses a **cascade (dual-loop) control structure**, which regulates mot
 <img width="1906" height="522" alt="image" src="https://github.com/user-attachments/assets/6fa85e50-a6cc-4664-8e66-6997f2b5b7c1" />
 
 
-**Settling time:** 0.12s
-**Steady-state speed error:** +100 RPM
-**Peak current during startup:** 1.4 A
+1. **Settling time:** 0.12s
+2. **Steady-state speed error:** +100 RPM
+3. **Peak current during startup:** 1.4 A
 
 
 
