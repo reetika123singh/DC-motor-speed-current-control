@@ -21,7 +21,6 @@ The system uses a **cascade (dual-loop) control structure**, which regulates mot
 3. **Inner current loop:** PI controller (P = 0.5, I = 5) compares the (limited) current command against sensed motor current and drives the H-Bridge PWM input.
 4. **Plant:** An averaged H-Bridge model (12V, 10kHz) driving a Simscape DC Motor model (Ra = 2Ω, La = 1mH, Kv = 0.0072 V/rpm, J = 1e-5 kg·m²), with feedback from a Current Sensor (inner loop) and an Ideal Rotational Motion Sensor (outer loop, converted from rad/s to RPM).
 
-This cascade structure is a standard technique for motor drives: the fast inner current loop protects the motor/driver from overcurrent and improves disturbance rejection, while the slower outer loop handles the actual speed tracking.
 
 ## Repository Structure
 
